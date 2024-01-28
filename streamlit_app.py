@@ -20,6 +20,7 @@ def fazer_web_scraping(url):
     dados['Date'] = pd.to_datetime(dados['Date'], dayfirst=True)
     dados = dados.sort_values(by='Date', ascending=True)
     dados = dados.reset_index(drop=True)
+    dados.to_csv('raw_data.csv', index=False)
     return dados
 
 # Bloco try-except para a tentativa de web scraping
